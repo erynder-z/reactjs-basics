@@ -4,6 +4,10 @@ import { Home } from './components/Home';
 
 class App extends React.Component {
   render() {
+    let someData = {
+      hobbies: ['JavaScript', 'Guitar'],
+    };
+
     return (
       <div className="container">
         <div className="row">
@@ -13,7 +17,9 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home></Home>
+            <Home name={'Jack'} age={69} someData={someData}>
+              <p>This paragraph was injected from outside the component</p>
+            </Home>
           </div>
         </div>
       </div>
