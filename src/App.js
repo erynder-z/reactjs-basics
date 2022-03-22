@@ -39,6 +39,7 @@ class App extends React.Component {
               someData={someData}
               greet={this.onGreet}
               changeLink={this.onChangeLinkName.bind(this)}
+              initialLinkName={this.state.homeLink}
             >
               <p>This paragraph was injected from outside the component</p>
             </Home>
