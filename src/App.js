@@ -17,7 +17,7 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name={'Jack'} age={69} someData={someData}>
+            <Home name={'Jack'} initialAge={69} someData={someData}>
               <p>This paragraph was injected from outside the component</p>
             </Home>
           </div>

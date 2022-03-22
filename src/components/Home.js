@@ -2,6 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export class Home extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      age: props.initialAge,
+      status: 0,
+    };
+  }
+
+  onMakeOlder() {
+    this.setState({
+      age: this.state.age + 1,
+    });
+  }
+
   render() {
     const text = 'Something';
     return (
@@ -9,7 +23,14 @@ export class Home extends React.Component {
         <p>In a new Component</p>
         <p>{text}</p>
         <p>Your name is {this.props.name} </p>
-        <p>You are {this.props.age} years old.</p>
+        <p>You are {this.state.age} years old.</p>
+        <p>Status : {this.state.status}</p>
+        <button
+          onClick={this.onMakeOlder.bind(this)}
+          className="btn btn-primary"
+        >
+          Make you older!
+        </button>
         <p>Your hobbies are:</p>
         <div>
           <ul>
@@ -27,7 +48,7 @@ export class Home extends React.Component {
 
 Home.propTypes = {
   name: PropTypes.string,
-  age: PropTypes.number,
+  initialAge: PropTypes.number,
   hobbies: PropTypes.object,
   children: PropTypes.element.isRequired,
 };
