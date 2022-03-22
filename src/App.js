@@ -3,6 +3,10 @@ import { Header } from './components/Header';
 import { Home } from './components/Home';
 
 class App extends React.Component {
+  onGreet() {
+    alert('Hello!');
+  }
+
   render() {
     let someData = {
       hobbies: ['JavaScript', 'Guitar'],
@@ -17,7 +21,12 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name={'Jack'} initialAge={69} someData={someData}>
+            <Home
+              name={'Jack'}
+              initialAge={69}
+              someData={someData}
+              greet={this.onGreet}
+            >
               <p>This paragraph was injected from outside the component</p>
             </Home>
           </div>
